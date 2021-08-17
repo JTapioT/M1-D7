@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 600px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+    }
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    table {
+      margin-bottom: 2em;
+    }
+    td {
+      padding: 1em;
+    }
+    caption {
+      border: 1px solid black;
+      font-size: 1.5rem;
+    }
+    th {
+      width: 25;
+      
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    textarea {
+      display: block;
+      width: 50%;
+      margin: 0 auto;
+      height: 200px;
+    }
+    button {
+      margin: 0 auto; 
+      display: block;
+      width: 50%;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2em;
+      background: grey;
+      color: white;
+    }
+    
+  </style>
+
+  <title>Smartphone Shop</title>
+</head>
+<body>
+  <h1>SmartPhone Shop Website</h1>
+
+  <table>
+    <caption>Top 5 Phones</caption>
+    <tbody>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td><a href="https://www.amazon.com/Samsung-Factory-Unlocked-Smartphone-Pro-Grade/dp/B08FYTSXGQ/ref=sr_1_3?dchild=1&keywords=phone&qid=1629204327&sr=8-3&th=1" target="_blank"><img src="https://manilashaker.com/wp-content/uploads/2020/07/samsung-galaxy-s20-bts-edition-2nd-batch-of-pre-order-now-open.png"></a></td>
+        <td>Samsung Galaxy S20</td>
+        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis eaque aspernatur harum doloremque sint laudantium!</td>
+        <td>549€</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.amazon.com/Apple-iPhone-12-64GB-Black/dp/B08PP5MSVB/ref=sr_1_2?dchild=1&keywords=iphone+12&qid=1629204733&sr=8-2" target="_blank"><img src="https://shop.jtglobal.com/wp-content/uploads/2020/10/iphone-12-pro-pacific-blue.jpg"></a></td>
+        <td>Iphone 12</td>
+        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia est labore odit dolorum laudantium facere!</td>
+        <td>709€</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.amazon.com/Google-GA01187-US-Pixel-Black-Unlocked/dp/B07YMNLXL3/ref=sr_1_10?crid=35QRIS5E5MENI&dchild=1&keywords=google+pixel+4a&qid=1629205112&sprefix=google+pixel%2Caps%2C272&sr=8-10" target="_blank"><img src="https://static.techspot.com/images/products/2020/smartphones/org/2020-10-14-product-15.jpg"></a></td>
+        <td>Google Pixel 4a</td>
+        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, amet! Voluptas accusantium ipsa reiciendis. Illo.</td>
+        <td>462€</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.amazon.com/Power-Battery1-Unlocked-Motorola-Camera/dp/B084D89DBF/ref=sr_1_17?crid=35QRIS5E5MENI&dchild=1&keywords=google+pixel+4a&qid=1629205166&sprefix=google+pixel%2Caps%2C272&sr=8-17" target="_blank"><img src="https://phonesdata.com/files/models/Motorola--Moto-G-Power-174.jpg"></a></td>
+        <td>Moto G</td>
+        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo earum veritatis impedit eum soluta dicta.</td>
+        <td>174€</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.amazon.com/Samsung-Unlocked-Storage-Lasting-Battery/dp/B08BX67ZNV/ref=sr_1_18?crid=35QRIS5E5MENI&dchild=1&keywords=google+pixel+4a&qid=1629205166&sprefix=google+pixel%2Caps%2C272&sr=8-18" target="_blank"><img src="https://1stchoicerentals.com.au/wp-content/uploads/2020/03/13492.jpg"></a></td>
+        <td>Samsung Galaxy A71</td>
+        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, maxime consequuntur molestiae dolor quam animi?</td>
+        <td>595€</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <textarea placeholder="Write your message here!"></textarea>
+  <button>Submit</button>
+  <footer>
+    <h2>Smartphone Shop Website</h2>
+    <p>Shady Address 1235, 12051 Berlin Germany</p>
+  </footer>
+
+  <script type="text/javascript">
+
+    // Change h1 text
+    let changeHeaderText = function() {
+      // Get h1 element:
+      let h1Header = document.getElementsByTagName("h1");
+      console.log(h1Header);
+      // Change the h1 innerText value:
+      h1Header.innerText = "The header has been changed";
+    }
+    changeHeaderText();
+
+    // Change page background color
+    let changeBackGroundColor = function() {
+      // Get style property from body:
+      let bodyBackground = document.body.style;
+      // Change backGroundColor property value:
+      bodyBackground.backgroundColor = "lightgrey";
+    }
+    // changeBackGroundColor();
+
+    // Change footer address:
+    let changeFooterAddress = function() {
+      // Get the element inside footer element:
+      let footerAddress = document.querySelector("footer p");
+      // Change the value of the element:
+      footerAddress.innerText = "Really Shady Address 123, 12051 Berlin, Germany";
+    }
+    //changeFooterAddress();
+
+    // Add a CSS class to every Amazon link
+    let addCssClassToLink = function() {
+      // Get all the <a> elements inside the <table>:
+      let linkElements = document.querySelectorAll("td a");
+      // Add a link to the <a> elements:
+      for(element of linkElements) {
+        element.class="phoneLink";
+      }
+    }
+    addCssClassToLink();
+
+
+    // Toggle a CSS class for all the images in the table
+    // Class should set the visibility of the image
+
+    let imagesVisibility = function(showImages) {
+      // Get the <img> elements from the <table>
+      let tableImages = document.querySelectorAll("img");
+      // Set class to images:
+      for(image of tableImages) {
+        image.className = "imageVisibility";
+      }
+      
+      if(!showImages) {
+        // Get all <img> elements with a class "imageVisibility":
+        let imagesClass = document.getElementsByClassName("imageVisibility");
+        // Loop and set the visibility attribute value to hidden
+        // Is this redundant to loop through all of them?
+        for(image of imagesClass) {
+          image.style.visibility = "hidden";
+        }
+      }
+    }
+    //imagesVisibility(false);
+
+
+    // Function to color randomly the the price for each product:
+
+    let colorPriceRandomly = function() {
+      // Get all the <td> elements from the table which contain the price:
+      let phonePrices = document.querySelectorAll("tr>td:last-child");
+
+      // Some random color generator snippet from StackOverFlow:
+      function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+      // Loop through all of the prices
+      // Set style attribute color to random color returned from
+      // running the function getRandomColor:
+      for(price of phonePrices) {
+        price.style.color = getRandomColor();
+      }
+    }
+    colorPriceRandomly();
+
+  </script>
+</body>
+</html>
