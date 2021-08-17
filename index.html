@@ -24,10 +24,7 @@
       border: 1px solid black;
       font-size: 1.5rem;
     }
-    th {
-      width: 25;
-      
-    }
+
     img {
       width: 100%;
       object-fit: cover;
@@ -104,7 +101,7 @@
   <button>Submit</button>
   <footer>
     <h2>Smartphone Shop Website</h2>
-    <p>Shady Address 1235, 12051 Berlin Germany</p>
+    <p>Shady Address 1235, 12051 Berlin, Germany</p>
   </footer>
 
   <script type="text/javascript">
@@ -133,7 +130,7 @@
       // Get the element inside footer element:
       let footerAddress = document.querySelector("footer p");
       // Change the value of the element:
-      footerAddress.innerText = "Really Shady Address 123, 12051 Berlin, Germany";
+      footerAddress.innerText = "Really Shady Address 123, 12051 Berlin,Germany";
     }
     //changeFooterAddress();
 
@@ -143,7 +140,7 @@
       let linkElements = document.querySelectorAll("td a");
       // Add a link to the <a> elements:
       for(element of linkElements) {
-        element.class="phoneLink";
+        element.classList.add("phoneLink");
       }
     }
     addCssClassToLink();
@@ -156,7 +153,7 @@
       // Get the <img> elements from the <table>
       let tableImages = document.querySelectorAll("img");
       // Set class to images:
-      for(image of tableImages) {
+      for(let image of tableImages) {
         image.className = "imageVisibility";
       }
       
@@ -164,7 +161,6 @@
         // Get all <img> elements with a class "imageVisibility":
         let imagesClass = document.getElementsByClassName("imageVisibility");
         // Loop and set the visibility attribute value to hidden
-        // Is this redundant to loop through all of them?
         for(image of imagesClass) {
           image.style.visibility = "hidden";
         }
@@ -192,7 +188,7 @@
       // Loop through all of the prices
       // Set style attribute color to random color returned from
       // running the function getRandomColor:
-      for(price of phonePrices) {
+      for(let price of phonePrices) {
         price.style.color = getRandomColor();
       }
     }
