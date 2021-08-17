@@ -23,6 +23,7 @@
     caption {
       border: 1px solid black;
       font-size: 1.5rem;
+      margin-top: 2em;
     }
 
     img {
@@ -54,6 +55,12 @@
 </head>
 <body>
   <h1>SmartPhone Shop Website</h1>
+
+  <button onclick="changeHeaderText()">Change H1 Text</button>
+  <button onclick="changeBackGroundColor()">Change background color</button>
+  <button onclick="changeFooterAddress()">Change footer address</button>
+  <button onclick="imagesVisibility(false)">Make pictures disappear</button>
+  <button onclick="colorPriceRandomly()">Random colors for prices</button>
 
   <table>
     <caption>Top 5 Phones</caption>
@@ -107,30 +114,51 @@
   <script type="text/javascript">
 
     // Change h1 text
+    let isHeaderTextChanged = false;
     let changeHeaderText = function() {
       // Get h1 element:
-      let h1Header = document.getElementsByTagName("h1");
+      let h1Header = document.querySelector("h1");
       console.log(h1Header);
-      // Change the h1 innerText value:
-      h1Header.innerText = "The header has been changed";
+      // Change the h1 innerText value accordingly:
+      if(!isHeaderTextChanged) {
+        h1Header.innerText = "The header has been changed";
+        isHeaderTextChanged = true;
+      } else {
+        h1Header.innerText = "SmartPhone Shop Website";
+        isHeaderTextChanged = false;
+      }
     }
-    changeHeaderText();
+    // changeHeaderText();
 
     // Change page background color
+    let isBackGroundColorChanged = false;
     let changeBackGroundColor = function() {
       // Get style property from body:
       let bodyBackground = document.body.style;
       // Change backGroundColor property value:
-      bodyBackground.backgroundColor = "lightgrey";
+      if(!isBackGroundColorChanged) {
+        bodyBackground.backgroundColor = "lightgrey";
+        isBackGroundColorChanged = true;
+      } else {
+        bodyBackground.backgroundColor = "white";
+        isBackGroundColorChanged = false;
+      }
     }
     // changeBackGroundColor();
 
     // Change footer address:
+    let isFooterAddressChanged = false;
     let changeFooterAddress = function() {
       // Get the element inside footer element:
       let footerAddress = document.querySelector("footer p");
       // Change the value of the element:
-      footerAddress.innerText = "Really Shady Address 123, 12051 Berlin,Germany";
+      if(!isFooterAddressChanged) {
+        footerAddress.innerText = "Really Shady Address 123, 12051 Berlin,Germany";
+        isFooterAddressChanged = true;
+      } else {
+        footerAddress.innerText = "Shady Address 123, 12051 Berlin, Germany";
+        isFooterAddressChanged = false;
+      }
     }
     //changeFooterAddress();
 
@@ -149,28 +177,40 @@
     // Toggle a CSS class for all the images in the table
     // Class should set the visibility of the image
 
-    let imagesVisibility = function(showImages) {
+    let isImagesHidden = false;
+    let imagesVisibility = function() {
+
       // Get the <img> elements from the <table>
       let tableImages = document.querySelectorAll("img");
       // Set class to images:
       for(let image of tableImages) {
         image.className = "imageVisibility";
       }
-      
-      if(!showImages) {
-        // Get all <img> elements with a class "imageVisibility":
-        let imagesClass = document.getElementsByClassName("imageVisibility");
+      // Get all <img> elements with a class "imageVisibility":
+      let imagesClass = document.getElementsByClassName("imageVisibility");
+
+      if(!isImagesHidden) {
         // Loop and set the visibility attribute value to hidden
+        // Change back visible if hidden
         for(image of imagesClass) {
           image.style.visibility = "hidden";
+          isImagesHidden
         }
+        isImagesHidden = true;
+
+      } else {
+        for(image of imagesClass) {
+          image.style.visibility = "visible";
+        }
+
+        isImagesHidden = false;
       }
     }
     //imagesVisibility(false);
 
 
     // Function to color randomly the the price for each product:
-
+    let isPriceColorChanged = false;
     let colorPriceRandomly = function() {
       // Get all the <td> elements from the table which contain the price:
       let phonePrices = document.querySelectorAll("tr>td:last-child");
@@ -184,15 +224,21 @@
         }
         return color;
       }
-
-      // Loop through all of the prices
-      // Set style attribute color to random color returned from
-      // running the function getRandomColor:
-      for(let price of phonePrices) {
-        price.style.color = getRandomColor();
+      if(!isPriceColorChanged) {
+        // Loop through all of the prices
+        // Set style attribute color to random color returned from
+        // running the function getRandomColor:
+        for(let price of phonePrices) {
+          price.style.color = getRandomColor();
+        }
+        isPriceColorChanged = true;
+      } else {
+        for (let price of phonePrices) {
+          price.style.color = "black";
+        }
+        isPriceColorChanged = false;
       }
     }
-    colorPriceRandomly();
 
   </script>
 </body>
